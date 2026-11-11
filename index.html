@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية | Privacy Policy - برج الماسة (Al-Masa Tower)</title>
+  <meta name="description" content="وثيقة سياسة الخصوصية الرسمية لتطبيق برج الماسة (Al-Masa Luxury Tower Management System) المعتمدة لمتاجر التطبيقات.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #d4af37;
+      --primary-dark: #b8972e;
+      --primary-light: #f5d77f;
+      --accent: #38bdf8;
+      --bg: #0b1329;
+      --bg-card: rgba(16, 26, 51, 0.82);
+      --border: rgba(212, 175, 55, 0.2);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --badge-bg: rgba(212, 175, 55, 0.12);
+      --badge-border: rgba(212, 175, 55, 0.35);
+      --radius: 16px;
+      --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      --border: rgba(212, 175, 55, 0.3);
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --badge-bg: rgba(212, 175, 55, 0.1);
+      --badge-border: rgba(212, 175, 55, 0.25);
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+
+    body {
+      font-family: 'Cairo', 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.06) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    html[dir="ltr"] {
+      font-family: 'Inter', 'Cairo', -apple-system, sans-serif;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(11, 19, 41, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    [data-theme="light"] header {
+      background: rgba(248, 250, 252, 0.9);
+    }
+
+    .nav-container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #10203e, #0b1329);
+      border: 1.5px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--primary-light);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      background: linear-gradient(135deg, var(--text) 30%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .meta-bar code {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--primary-light);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .card ul {
+      padding-inline-start: 1.8rem;
+      color: var(--text);
+      font-size: 0.98rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.2rem;
+    }
+
+    .badge-box {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .badge-box strong {
+      display: block;
+      color: var(--primary-light);
+      font-size: 0.96rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .badge-box span {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .alert-box {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--primary);
+      border-radius: 12px;
+      padding: 1.1rem;
+      margin-top: 1rem;
+      color: var(--text);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: rgba(11, 19, 41, 0.6);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <header>
+    <div class="nav-container">
+      <a href="https://elmohands.official-web.online/" class="brand" target="_blank" rel="noopener">
+        <div class="logo-badge">💎</div>
+        <div>
+          <div class="brand-title">برج الماسة</div>
+          <div class="brand-sub">Al-Masa Luxury Tower</div>
+        </div>
+      </a>
+      <div class="controls">
+        <button class="btn" id="themeBtn" aria-label="تبديل المظهر">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <button class="btn" id="langBtn" aria-label="Switch Language">
+          <span id="langLabel">English</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ARABIC CONTENT (DEFAULT) -->
+    <div id="content-ar" class="lang-content active">
+      <div class="hero">
+        <span class="tag">🛡️ وثيقة سياسة الخصوصية الرسمية المعتمدة لمتاجر التطبيقات (Google Play & App Store)</span>
+        <h1>سياسة الخصوصية لمنظومة برج الماسة</h1>
+        <div class="meta-bar">
+          <span>📦 معرف الحزمة: <code>com.towercare.app.tower_management</code></span>
+          <span>🏢 المطور: شركة المهندس للبرمجيات (Elmohands Software)</span>
+          <span>📅 تاريخ النفاذ: 11 نوفمبر 2026</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>1. نظرة عامة والالتزام بحماية البيانات</h2>
+        <p>نحن في <strong>شركة المهندس للبرمجيات (Elmohands Software)</strong> وإدارة <strong>برج الماسة (Al-Masa Diamond Tower)</strong> نضع أمان وخصوصية بيانات قاطني البرج وإدارته وفريق الحراسة في صميم أولوياتنا. توضح هذه الوثيقة الشفافة كيفية جمع البيانات ومعالجتها وتخزينها وحمايتها طبقاً لأعلى المعايير العالمية ومعايير متجر Google Play ومتجر Apple App Store.</p>
+      </div>
+
+      <div class="card">
+        <h2>2. البيانات التي يجمعها التطبيق والغرض من استخدامها</h2>
+        <p>يجمع تطبيق <strong>برج الماسة</strong> فقط الحد الأدنى من المعلومات اللازمة لتقديم الخدمات السكنية والأمنية بكفاءة عالية:</p>
+        <ul>
+          <li><strong>بيانات الملف الشخصي والوحدة السكنية:</strong> الاسم الكامل، رقم الهاتف، البريد الإلكتروني، رقم الشقة، رقم الدور، وصفة الإقامة (مالك / مستأجر / إدارة / حراسة). تُستخدم هذه البيانات حصراً للتحقق من هوية المستخدم واعتماد حسابه من قبل إدارة البرج.</li>
+          <li><strong>بلاغات وتذاكر الصيانة (Maintenance Tickets):</strong> عنوان البلاغ، وصف العطل، التصنيف، الأولوية، والصور المرفقة إن وجدت. تُستخدم لتوجيه الفنيين وإصلاح الأعطال وتتبع حالة البلاغ.</li>
+          <li><strong>تصاريح الزوار والجراج (Parking & Visitor Passes):</strong> بيانات رقم لوحة السيارة، اسم الزائر، وتوقيت الدخول الصادر عبر رمز الاستجابة السريع (QR Code) لتسهيل دخول البوابات وتنظيم الجراج.</li>
+          <li><strong>محادثات البرج والرسائل الصوتية (Chat & Voice Notes):</strong> الرسائل النصية، الصور، والتسجيلات الصوتية المرسلة داخل قنوات البرج وغرف الطوارئ للتواصل الفوري بين السكان والإدارة.</li>
+          <li><strong>نداءات الاستغاثة الفورية (SOS Emergency Alerts):</strong> إشعار الطوارئ الصادر برقم الشقة والدور لإرسال الأمن وفرق الإنقاذ إلى موقع الساكن على الفور.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>3. الأذونات المطلوبة والغرض التقني منها (App Permissions Rationale)</h2>
+        <p>يطلب التطبيق الأذونات الأساسية التي تخدم تجربة الاستخدام فقط ولا يطلب أي أذونات تطفلية:</p>
+        <div class="badge-grid">
+          <div class="badge-box">
+            <strong>📷 الكاميرا (Camera)</strong>
+            <span>تُستخدم لمسح رموز الاستجابة السريعة (QR Code) لتصاريح دخول الزوار عند البوابات، والتقاط صور الأعطال لبلاغات الصيانة.</span>
+          </div>
+          <div class="badge-box">
+            <strong>🎙️ الميكروفون (Microphone)</strong>
+            <span>يُستخدم لتسجيل الرسائل الصوتية الحية التفاعلية داخل شات خدمات البرج والتواصل أثناء نداءات الطوارئ.</span>
+          </div>
+          <div class="badge-box">
+            <strong>🖼️ معرض الصور والملفات (Photo Library)</strong>
+            <span>يُستخدم لإرفاق صور المشكلات الفنية من جهازك في تذاكر الشكاوى والمحادثات وحفظ إيصالات سداد رسوم الصيانة.</span>
+          </div>
+          <div class="badge-box">
+            <strong>🌐 الإنترنت والشبكة (Internet & Network State)</strong>
+            <span>يُستخدم للربط والمزامنة السحابية الفورية اللحظية لقاعدة البيانات عبر خوادم Google Cloud و Firebase الآمنة المشفرة.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>4. أمان البيانات والتشفير (Data Security & Cloud Infrastructure)</h2>
+        <p>تتم مزامنة البيانات عبر خوادم <strong>Cloud Firestore</strong> السحابية المدارة من شركة Google، وتطبق المنظومة:</p>
+        <ul>
+          <li><strong>التشفير الكامل أثناء النقل والتخزين:</strong> تشفير كافة البيانات عبر بروتوكولات HTTPS و TLS 1.3 وتشفير البيانات المخزنة AES-256.</li>
+          <li><strong>قواعد الأمان الصارمة (Firestore Security Rules):</strong> عزل بيانات كل مستخدم وكل شقة سكنية بحيث لا يمكن لأي طرف غير مصرح له الاطلاع على التذاكر الخاصة أو المحادثات.</li>
+          <li><strong>عدم بيع أو مشاركة البيانات:</strong> نحن نتعهد تعهداً قاطعاً بعدم بيع أو تأجير أو مشاركة أي بيانات شخصية مع أي جهات إعلانية أو تسويقية أو أطراف خارجية.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>5. خصوصية الأطفال (Children's Privacy)</h2>
+        <p>تطبيق <strong>برج الماسة</strong> مخصص للأغراض السكنية والإدارية وموجه للبالغين وأرباب الأسر وإدارة العقارات، ولا نقوم عمداً بجمع أي معلومات من الأطفال دون سن 13 عاماً.</p>
+      </div>
+
+      <div class="card">
+        <h2>6. التحكم في البيانات وحذف الحساب (Account & Data Deletion Policy)</h2>
+        <p>التزاماً بسياسات Google Play لحماية بيانات المستخدمين، يحق لأي ساكن أو مستخدم طلب حذف حسابه وبياناته بالكامل:</p>
+        <div class="alert-box">
+          <strong>طرق تقديم طلب الحذف الفوري:</strong>
+          <p style="margin-top:0.4rem;">1. من داخل التطبيق: عبر خيار "تسجيل الخروج وحذف الحساب" في صفحة الإعدادات.<br>
+          2. عبر البريد الإلكتروني: مراسلة فريق إدارة التطبيق على البريد: <code>support@elmohands.official-web.online</code> مع ذكر رقم الشقة والهاتف المسجل، وسيتم حذف كافة سجلاتك وصورك وحسابك بصورة نهائية خلال 48 ساعة عمل.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>7. معلومات التواصل والمطور المسؤول</h2>
+        <p>إذا كانت لديك أي استفسارات أو أسئلة بخصوص سياسة الخصوصية أو ممارسات الأمان، يسعدنا تواصلك الدائم معنا:</p>
+        <ul>
+          <li><strong>الجهة المطورة:</strong> شركة المهندس للبرمجيات (Elmohands Software)</li>
+          <li><strong>المشرف التقني:</strong> المهندس محمد صلاح (Eng. Mohamed Salah)</li>
+          <li><strong>الموقع الرسمي:</strong> <a href="https://elmohands.official-web.online/" target="_blank" rel="noopener">elmohands.official-web.online</a></li>
+          <li><strong>البريد الإلكتروني للدعم:</strong> <a href="mailto:support@elmohands.official-web.online">support@elmohands.official-web.online</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en" class="lang-content">
+      <div class="hero">
+        <span class="tag">🛡️ Official Certified Privacy Policy for App Stores (Google Play & Apple App Store)</span>
+        <h1>Privacy Policy for Al-Masa Tower</h1>
+        <div class="meta-bar">
+          <span>📦 Package ID: <code>com.towercare.app.tower_management</code></span>
+          <span>🏢 Developer: Elmohands Software</span>
+          <span>📅 Effective Date: November 11, 2026</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>1. Overview & Privacy Commitment</h2>
+        <p>At <strong>Elmohands Software</strong> and the management of <strong>Al-Masa Diamond Tower</strong>, safeguarding your privacy and personal data is our utmost priority. This document outlines how we collect, store, and protect resident and staff information in full compliance with Google Play Store and Apple App Store review policies.</p>
+      </div>
+
+      <div class="card">
+        <h2>2. Data Collection & Purpose</h2>
+        <p>The <strong>Al-Masa Tower</strong> application only processes information strictly necessary for residential community management, facility bookings, and safety dispatch:</p>
+        <ul>
+          <li><strong>Account & Residential Profile:</strong> Full name, mobile number, email, apartment unit number, floor, and residency type (Owner / Tenant / Security / Management). Used solely to authenticate identities and approve accounts.</li>
+          <li><strong>Maintenance Requests & Service Tickets:</strong> Ticket title, issue description, priority, category, and inspection photographs to dispatch certified technicians.</li>
+          <li><strong>Visitor & Garage Access Passes:</strong> Vehicle license plates, visitor names, and time-stamped QR codes for automated gate entry.</li>
+          <li><strong>Community Chat & Audio Notes:</strong> Real-time encrypted text, voice messages, and media shared between residents and tower administration.</li>
+          <li><strong>Emergency SOS Alerts:</strong> Urgent distress triggers dispatching unit coordinates and resident details to security and medical dispatch.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>3. Device Permissions & Usage Rationale</h2>
+        <p>Our application requests only the minimal permissions required to deliver operational features:</p>
+        <div class="badge-grid">
+          <div class="badge-box">
+            <strong>📷 Camera</strong>
+            <span>Used exclusively to scan visitor QR entry passes at the gate and capture maintenance defect photos.</span>
+          </div>
+          <div class="badge-box">
+            <strong>🎙️ Microphone</strong>
+            <span>Used to record interactive live audio notes in the community chat and voice distress calls.</span>
+          </div>
+          <div class="badge-box">
+            <strong>🖼️ Photo Library & Storage</strong>
+            <span>Used to attach existing defect photos to repair tickets and save maintenance fee receipts.</span>
+          </div>
+          <div class="badge-box">
+            <strong>🌐 Internet & Network State</strong>
+            <span>Required for real-time cloud synchronization using secure Google Cloud Firebase infrastructure.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>4. Data Security & Encryption</h2>
+        <p>All communication is secured via industry-standard protocols:</p>
+        <ul>
+          <li><strong>End-to-End Transit Encryption:</strong> Enforced via HTTPS and TLS 1.3, with AES-256 encrypted database storage.</li>
+          <li><strong>Strict Cloud Firestore Rules:</strong> Granular access control ensuring only authorized unit owners and security officers access corresponding data.</li>
+          <li><strong>No Third-Party Advertising:</strong> We never sell, monetize, or disclose your personal records to third-party ad networks.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>5. Children's Privacy</h2>
+        <p>Al-Masa Tower is intended for property owners, residents, and facility administrators. It does not solicit or collect data from children under 13.</p>
+      </div>
+
+      <div class="card">
+        <h2>6. Account & Data Deletion Rights</h2>
+        <p>In accordance with Google Play's User Data policy, users retain the right to delete their account and all associated data at any time:</p>
+        <div class="alert-box">
+          <strong>How to Request Data Deletion:</strong>
+          <p style="margin-top:0.4rem;">1. Inside the App: Under settings, choose "Logout & Request Account Deletion".<br>
+          2. By Email: Contact <code>support@elmohands.official-web.online</code> with your registered phone and unit number. All associated records will be permanently purged within 48 hours.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>7. Contact & Developer Details</h2>
+        <p>For questions or assistance regarding this privacy document, please contact us:</p>
+        <ul>
+          <li><strong>Developer:</strong> Elmohands Software (شركة المهندس للبرمجيات)</li>
+          <li><strong>Technical Lead:</strong> Eng. Mohamed Salah</li>
+          <li><strong>Official Website:</strong> <a href="https://elmohands.official-web.online/" target="_blank" rel="noopener">elmohands.official-web.online</a></li>
+          <li><strong>Support Email:</strong> <a href="mailto:support@elmohands.official-web.online">support@elmohands.official-web.online</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 برج الماسة (Al-Masa Luxury Tower) • شركة المهندس للبرمجيات (Elmohands Software). All rights reserved.</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://elmohands.official-web.online/" target="_blank" rel="noopener">elmohands.official-web.online</a>
+    </p>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const langBtn = document.getElementById('langBtn');
+    const langLabel = document.getElementById('langLabel');
+    const contentAr = document.getElementById('content-ar');
+    const contentEn = document.getElementById('content-en');
+
+    let currentTheme = 'dark';
+    let currentLang = 'ar';
+
+    themeBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', currentTheme);
+      themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    });
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      if (currentLang === 'ar') {
+        document.documentElement.setAttribute('lang', 'ar');
+        document.documentElement.setAttribute('dir', 'rtl');
+        contentEn.classList.remove('active');
+        contentAr.classList.add('active');
+        langLabel.textContent = 'English';
+      } else {
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('dir', 'ltr');
+        contentAr.classList.remove('active');
+        contentEn.classList.add('active');
+        langLabel.textContent = 'العربية';
+      }
+    });
+  </script>
+</body>
+</html>
