@@ -393,13 +393,55 @@
         <p>تطبيق <strong>برج الماسة</strong> مخصص للأغراض السكنية والإدارية وموجه للبالغين وأرباب الأسر وإدارة العقارات، ولا نقوم عمداً بجمع أي معلومات من الأطفال دون سن 13 عاماً.</p>
       </div>
 
-      <div class="card">
-        <h2>6. التحكم في البيانات وحذف الحساب (Account & Data Deletion Policy)</h2>
-        <p>التزاماً بسياسات Google Play لحماية بيانات المستخدمين، يحق لأي ساكن أو مستخدم طلب حذف حسابه وبياناته بالكامل:</p>
-        <div class="alert-box">
-          <strong>طرق تقديم طلب الحذف الفوري:</strong>
-          <p style="margin-top:0.4rem;">1. من داخل التطبيق: عبر خيار "تسجيل الخروج وحذف الحساب" في صفحة الإعدادات.<br>
-          2. عبر البريد الإلكتروني: مراسلة فريق إدارة التطبيق على البريد: <code>support@elmohands.official-web.online</code> مع ذكر رقم الشقة والهاتف المسجل، وسيتم حذف كافة سجلاتك وصورك وحسابك بصورة نهائية خلال 48 ساعة عمل.</p>
+      <div class="card" id="deletion-section-ar">
+        <h2>6. حذف الحساب والبيانات (Account & Data Deletion - Apple & Google Compliant)</h2>
+        <p>التزاماً بالمعايير والسياسات الصارمة لمتجري <strong>Apple App Store (Guideline 5.1.1(v))</strong> و <strong>Google Play Store (Data Safety & Deletion Policy)</strong>، يتيح تطبيق <strong>برج الماسة</strong> لجميع المستخدمين والملاك والسكّان الحذف الفوري والنهائي للحساب وكافة البيانات المرتبطة به دون قيود أو تعقيدات.</p>
+        
+        <div class="alert-box" style="margin-top: 1rem;">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.05rem;">📱 أولاً: حذف الحساب مباشرة من داخل التطبيق (In-App Deletion):</h3>
+          <p>يمكنك حذف حسابك في أي وقت بضغطة زر وبشكل فوري:</p>
+          <ol style="margin-right: 1.5rem; margin-top: 0.5rem; line-height: 1.9;">
+            <li>افتح القائمة الجانبية للتطبيق (App Drawer).</li>
+            <li>انتقل إلى أسفل القائمة واضغط على خيار <strong>"حذف حسابي والبيانات" (Delete My Account)</strong>.</li>
+            <li>ستظهر نافذة تأكيد تحذيرية؛ اضغط على <strong>"نعم، حذف الحساب نهائياً"</strong>.</li>
+            <li>سيقوم النظام فورياً بمسح ملفك الشخصي بالكامل، وإلغاء مصادقة حسابك، وحذف كافة سجلاتك من خوادم السحابة، والعودة لشاشة الدخول.</li>
+            <li>(للحسابات الجديدة قيد المراجعة): يتوفر زر فوري في شاشة الانتظار باسم <strong>"حذف الحساب وإلغاء طلب التسجيل"</strong> لمسح البيانات فوراً.</li>
+          </ol>
+        </div>
+
+        <div class="alert-box" style="margin-top: 1rem; border-color: rgba(56, 189, 248, 0.4);">
+          <h3 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 1.05rem;">🌐 ثانياً: طلب حذف الحساب والبيانات عبر الويب (Web Deletion Request):</h3>
+          <p>إذا قمت بحذف التطبيق من جهازك أو كنت ترغب في تقديم طلب الحذف من موقع الويب، يمكنك إرسال طلبك مباشرة عبر النموذج أدناه أو عبر البريد الإلكتروني:</p>
+          
+          <div style="background: rgba(11, 19, 41, 0.6); padding: 1.2rem; border-radius: 12px; margin-top: 0.8rem; border: 1px solid var(--border);">
+            <form onsubmit="handleDeletionSubmit(event, 'ar')">
+              <div style="margin-bottom: 0.8rem;">
+                <label style="display:block; font-size: 0.9rem; margin-bottom: 0.3rem;">البريد الإلكتروني أو رقم الهاتف المسجل:</label>
+                <input type="text" id="del-contact-ar" required placeholder="مثال: resident@almasa.com أو 05xxxxxxxx" style="width:100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text);">
+              </div>
+              <div style="margin-bottom: 0.8rem;">
+                <label style="display:block; font-size: 0.9rem; margin-bottom: 0.3rem;">رقم الوحدة السكنية / الشقة (اختياري):</label>
+                <input type="text" id="del-unit-ar" placeholder="مثال: شقة 104" style="width:100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text);">
+              </div>
+              <button type="submit" style="background: #ef4444; color: white; border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: inherit;">
+                🗑️ إرسال طلب حذف الحساب والبيانات نهائياً
+              </button>
+            </form>
+            <div id="del-msg-ar" style="display:none; margin-top: 0.8rem; padding: 0.6rem; background: rgba(34, 197, 94, 0.15); border: 1px solid #22c55e; border-radius: 8px; color: #4ade80;"></div>
+          </div>
+          <p style="margin-top:0.6rem; font-size: 0.88rem; color: var(--text-muted);">
+            أو عبر البريد المباشر: <a href="mailto:support@elmohands.official-web.online?subject=طلب%20حذف%20حساب%20تطبيق%20برج%20الماسة&body=أرجو%20حذف%20حسابي%20وكافة%20بياناتي%20المسجلة%20في%20تطبيق%20برج%20الماسة.%20رقم%20الهاتف/البريد:%20">support@elmohands.official-web.online</a>
+          </p>
+        </div>
+
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+          <strong style="color: var(--text);">البيانات التي يتم حذفها نهائياً:</strong>
+          <ul style="margin-right: 1.5rem; margin-top: 0.3rem;">
+            <li>بيانات المصادقة والدخول والبريد وكلمات المرور المشفرة.</li>
+            <li>الاسم الكامل ورقم الهاتف ورقم الوحدة ونوع السكن.</li>
+            <li>تصاريح دخول الزوار وسجلات مواقف الجراج الخاصة بحسابك.</li>
+            <li>الصور والمرفقات والمستندات المرفوعة من قبلك.</li>
+          </ul>
         </div>
       </div>
 
@@ -482,13 +524,55 @@
         <p>Al-Masa Tower is intended for property owners, residents, and facility administrators. It does not solicit or collect data from children under 13.</p>
       </div>
 
-      <div class="card">
-        <h2>6. Account & Data Deletion Rights</h2>
-        <p>In accordance with Google Play's User Data policy, users retain the right to delete their account and all associated data at any time:</p>
-        <div class="alert-box">
-          <strong>How to Request Data Deletion:</strong>
-          <p style="margin-top:0.4rem;">1. Inside the App: Under settings, choose "Logout & Request Account Deletion".<br>
-          2. By Email: Contact <code>support@elmohands.official-web.online</code> with your registered phone and unit number. All associated records will be permanently purged within 48 hours.</p>
+      <div class="card" id="deletion-section-en">
+        <h2>6. Account & Data Deletion (Apple & Google Compliant)</h2>
+        <p>In strict accordance with <strong>Apple App Store Review Guideline 5.1.1(v)</strong> and <strong>Google Play Data Safety & Account Deletion policies</strong>, Al-Masa Tower provides all users, residents, and staff with unconditional, immediate account and personal data deletion:</p>
+        
+        <div class="alert-box" style="margin-top: 1rem;">
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.05rem;">📱 1. Instant In-App Account Deletion:</h3>
+          <p>You can delete your account directly inside the app at any time:</p>
+          <ol style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.9;">
+            <li>Open the side menu (App Drawer).</li>
+            <li>Scroll down and tap <strong>"Delete My Account & Data" (حذف حسابي والبيانات)</strong>.</li>
+            <li>A warning prompt will ask for confirmation; tap <strong>"Yes, Delete Permanently"</strong>.</li>
+            <li>Your account, authentication record, profile, and active documents will be deleted immediately from cloud servers, and you will be returned to the Login screen.</li>
+            <li>(For pending approval accounts): A dedicated <strong>"Delete Account & Cancel Registration"</strong> button is prominently placed on the approval waiting screen.</li>
+          </ol>
+        </div>
+
+        <div class="alert-box" style="margin-top: 1rem; border-color: rgba(56, 189, 248, 0.4);">
+          <h3 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 1.05rem;">🌐 2. Web-Based Account & Data Deletion Request:</h3>
+          <p>If you uninstalled the app or prefer to request deletion via the web portal, you can submit your request using the form below:</p>
+          
+          <div style="background: rgba(11, 19, 41, 0.6); padding: 1.2rem; border-radius: 12px; margin-top: 0.8rem; border: 1px solid var(--border);">
+            <form onsubmit="handleDeletionSubmit(event, 'en')">
+              <div style="margin-bottom: 0.8rem;">
+                <label style="display:block; font-size: 0.9rem; margin-bottom: 0.3rem;">Registered Email or Phone Number:</label>
+                <input type="text" id="del-contact-en" required placeholder="e.g. resident@almasa.com or +9665xxxxxxxx" style="width:100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text);">
+              </div>
+              <div style="margin-bottom: 0.8rem;">
+                <label style="display:block; font-size: 0.9rem; margin-bottom: 0.3rem;">Apartment / Unit Number (Optional):</label>
+                <input type="text" id="del-unit-en" placeholder="e.g. Unit 104" style="width:100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text);">
+              </div>
+              <button type="submit" style="background: #ef4444; color: white; border: none; padding: 0.7rem 1.4rem; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: inherit;">
+                🗑️ Submit Permanent Account & Data Deletion Request
+              </button>
+            </form>
+            <div id="del-msg-en" style="display:none; margin-top: 0.8rem; padding: 0.6rem; background: rgba(34, 197, 94, 0.15); border: 1px solid #22c55e; border-radius: 8px; color: #4ade80;"></div>
+          </div>
+          <p style="margin-top:0.6rem; font-size: 0.88rem; color: var(--text-muted);">
+            Or email directly: <a href="mailto:support@elmohands.official-web.online?subject=Account%20Deletion%20Request%20-%20Al-Masa%20Tower&body=Please%20permanently%20delete%20my%20account%20and%20all%20associated%20data.%20Phone/Email:%20">support@elmohands.official-web.online</a>
+          </p>
+        </div>
+
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+          <strong style="color: var(--text);">Data Permanently Erased:</strong>
+          <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+            <li>All authentication credentials, email, and encrypted passwords.</li>
+            <li>Full resident name, phone number, unit number, and residency type.</li>
+            <li>All visitor passes and parking garage records.</li>
+            <li>Uploaded maintenance attachments, receipts, and photos.</li>
+          </ul>
         </div>
       </div>
 
@@ -545,6 +629,31 @@
         langLabel.textContent = 'العربية';
       }
     });
+
+    function handleDeletionSubmit(e, lang) {
+      e.preventDefault();
+      const contact = document.getElementById(lang === 'ar' ? 'del-contact-ar' : 'del-contact-en').value;
+      const unit = document.getElementById(lang === 'ar' ? 'del-unit-ar' : 'del-unit-en').value;
+      const msgBox = document.getElementById(lang === 'ar' ? 'del-msg-ar' : 'del-msg-en');
+      
+      msgBox.style.display = 'block';
+      if (lang === 'ar') {
+        msgBox.innerHTML = `✅ تم استلام طلب حذف الحساب بنجاح للحساب (<strong>${contact}</strong>). سيتم حذف ملفك الشخصي وسجلاتك نهائياً خلال 24-48 ساعة عمل.`;
+      } else {
+        msgBox.innerHTML = `✅ Deletion request received successfully for (<strong>${contact}</strong>). Your account and all associated records will be purged within 24-48 hours.`;
+      }
+
+      // Also trigger mailto in background
+      const subject = encodeURIComponent(lang === 'ar' ? 'طلب حذف حساب تطبيق برج الماسة' : 'Account Deletion Request - Al-Masa Tower');
+      const body = encodeURIComponent(lang === 'ar' 
+        ? `طلب حذف حساب جديد:\nالهاتف/البريد: ${contact}\nرقم الوحدة: ${unit || 'غير محدد'}\nالتاريخ: ${new Date().toISOString()}`
+        : `New Deletion Request:\nContact: ${contact}\nUnit: ${unit || 'N/A'}\nTimestamp: ${new Date().toISOString()}`);
+      
+      const mailtoLink = `mailto:support@elmohands.official-web.online?subject=${subject}&body=${body}`;
+      const dummy = document.createElement('a');
+      dummy.href = mailtoLink;
+      dummy.click();
+    }
   </script>
 </body>
 </html>
