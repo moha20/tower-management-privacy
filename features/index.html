@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مميزات تطبيق برج الماسة | Al-Masa Tower App Features</title>
+  <meta name="description" content="استكشف كافة مميزات وخدمات تطبيق برج الماسة السكني الفاخر: إدارة الصيانة، حجز المرافق، تصاريح QR للزوار، المحادثات الفورية، ولوحة تحكم الإدارة والأمن.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #d4af37;
+      --primary-dark: #b8972e;
+      --primary-light: #f5d77f;
+      --accent: #38bdf8;
+      --bg: #070d1e;
+      --bg-card: rgba(16, 26, 51, 0.85);
+      --bg-card-hover: rgba(22, 36, 71, 0.95);
+      --border: rgba(212, 175, 55, 0.22);
+      --border-strong: rgba(212, 175, 55, 0.5);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --badge-bg: rgba(212, 175, 55, 0.12);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-glow: 0 10px 40px -10px rgba(212, 175, 55, 0.25);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      --bg-card-hover: #ffffff;
+      --border: rgba(212, 175, 55, 0.3);
+      --border-strong: rgba(212, 175, 55, 0.6);
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --badge-bg: rgba(212, 175, 55, 0.1);
+      --shadow-glow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+
+    body {
+      font-family: 'Cairo', 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(56, 189, 248, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.5) 0%, transparent 100%);
+      background-attachment: fixed;
+    }
+
+    html[dir="ltr"] {
+      font-family: 'Inter', 'Cairo', -apple-system, sans-serif;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(7, 13, 30, 0.88);
+      border-bottom: 1px solid var(--border);
+    }
+
+    [data-theme="light"] header {
+      background: rgba(248, 250, 252, 0.92);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1.5px solid var(--primary);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-action {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #070d1e;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #070d1e;
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .pill-tag {
+      display: inline-block;
+      padding: 0.35rem 1.2rem;
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="light"] .hero h1 {
+      background: linear-gradient(135deg, #0f172a 40%, var(--primary-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 820px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-banner-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-glow);
+      margin: 2rem auto;
+      max-width: 1024px;
+      background: #000;
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* FEATURE SECTIONS */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-item:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+    }
+
+    .feature-item.reverse {
+      direction: ltr;
+    }
+
+    .feature-item.reverse .feature-info {
+      direction: rtl;
+    }
+
+    html[dir="ltr"] .feature-item.reverse .feature-info {
+      direction: ltr;
+    }
+
+    .feature-info h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .feature-info p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .feature-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .feature-points li span.icon {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .feature-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .phone-mockup {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 4px solid #1e293b;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
+      background: #0f172a;
+    }
+
+    .phone-mockup:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--primary);
+    }
+
+    .phone-mockup img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .dual-mockup {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .dual-mockup .phone-mockup {
+      max-width: 240px;
+    }
+
+    /* ROLES HIGHLIGHT */
+    .roles-section {
+      margin-top: 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(16, 26, 51, 0.6), rgba(7, 13, 30, 0.9));
+      border: 1px solid var(--border);
+      padding: 3rem 2rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: right;
+    }
+
+    html[dir="ltr"] .roles-grid {
+      text-align: left;
+    }
+
+    .role-card {
+      background: rgba(11, 19, 41, 0.7);
+      border: 1px solid var(--border);
+      padding: 1.6rem;
+      border-radius: var(--radius-md);
+      transition: all 0.25s ease;
+    }
+
+    .role-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .role-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+
+    .role-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .role-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: rgba(7, 13, 30, 0.95);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* LANGUAGE CONTENT SWITCHING */
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .feature-item, .feature-item.reverse {
+        grid-template-columns: 1fr;
+        direction: rtl !important;
+      }
+      .feature-item.reverse .feature-info {
+        direction: rtl !important;
+      }
+      html[dir="ltr"] .feature-item, html[dir="ltr"] .feature-item.reverse {
+        direction: ltr !important;
+      }
+      html[dir="ltr"] .feature-item.reverse .feature-info {
+        direction: ltr !important;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .dual-mockup {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="https://elmohands.official-web.online/towerManagement" class="brand">
+        <img src="images/app_logo.png" alt="شعار برج الماسة" class="logo-img">
+        <span class="brand-title" id="nav-brand-title">برج الماسة</span>
+      </a>
+      <div class="nav-actions">
+        <button id="themeBtn" class="btn-action" title="تبديل المظهر">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <button id="langBtn" class="btn-action">
+          <span>🌐</span>
+          <span id="langLabel">English</span>
+        </button>
+        <a href="https://elmohands.official-web.online/towerManagement" class="btn-action btn-primary" id="btn-privacy-link">
+          🛡️ سياسة الخصوصية
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- ARABIC CONTENT -->
+    <div id="content-ar" class="lang-content active">
+
+      <!-- HERO -->
+      <section class="hero">
+        <span class="pill-tag">✨ المنظومة الرقمية السكنية والإدارية المتكاملة</span>
+        <h1>تطبيق برج الماسة السكني الفاخر</h1>
+        <p>
+          الحل التقني الشامل لقاطني وإدارة وحراسة برج الماسة. يجمع بين أحدث تقنيات السحابة الذكية، إدارة الصيانة، حجز المرافق، تصاريح الجراج والزوار عبر الـ QR، وغرف المحادثات الفورية المتعددة الوسائط.
+        </p>
+
+        <div class="hero-banner-wrap">
+          <img src="images/hero_banner.png" alt="بنر مميزات برج الماسة" class="hero-banner-img">
+        </div>
+      </section>
+
+      <!-- FEATURES LIST -->
+      <div class="features-grid">
+
+        <!-- Feature 1: Login & Authentication -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>🔑 تسجيل الدخول والمصادقة المعتمدة</h2>
+            <p>
+              بوابة تسجيل دخول آمنة تدعم كافة أدوار البرج مع فحص دقيق للبيانات واعتماد إداري رسمي قبل التفعيل لضمان أعلى درجات الخصوصية والأمان لقاطني البرج.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> دعم تسجيل السكان والملاك، أفراد الأمن، وفريق الإدارة والتشغيل.</li>
+              <li><span class="icon">✓</span> ربط الحساب برقم الشقة (الوحدة) ورقم الدور ونوع الإقامة (مالك / مستأجر).</li>
+              <li><span class="icon">✓</span> شاشة مراجعة فورية لحالة الطلب مع إمكانية إلغاء وحذف الحساب في أي وقت.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_login.png" alt="شاشة تسجيل الدخول">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_register.png" alt="شاشة التسجيل واختيار الوحدة">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 2: Resident Home & Services -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>🏠 لوحة تحكم الساكن والخدمات الفاخرة</h2>
+            <p>
+              واجهة رئيسية أنيقة تم تصميمها بعناية لتمنح الساكن وصولاً فورياً لكافة خدمات البرج الفندقية بنقرة واحدة، مع متابعة حية لجميع الإعلانات والتعميمات الرسمية.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">🚨</span> <strong>زر استغاثة فوري (SOS):</strong> إرسال تنبيه طوارئ عاجل مع تحديد الشقة لمكتب الأمن والإدارة خلال ثوانٍ.</li>
+              <li><span class="icon">✓</span> تقديم ومتابعة بلاغات الصيانة الدورية مع إرفاق الصور ومتابعة وصول الفني.</li>
+              <li><span class="icon">✓</span> حجز مرافق البرج الفاخرة: النادي الصحي، الجيم، المسبح، وقاعات المناسبات.</li>
+              <li><span class="icon">✓</span> استعراض سجل السكان وخطة الإخلاء في حالات الطوارئ.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_home.png" alt="الرئيسية وزر الاستغاثة">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_drawer.png" alt="القائمة الجانبية الشاملة">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 3: Live Multimedia Chat -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>💬 محادثات البرج الفورية المتعددة الوسائط</h2>
+            <p>
+              غرف محادثات حيّة متكاملة تربط السكان بفريق الصيانة والأمن والإدارة، تدعم المراسلة النصية، إرسال الصور، والرسائل الصوتية المباشرة مع مزامنة سحابية فورية.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">🎙️</span> تسجيل وإرسال الملاحظات الصوتية المباشرة مع مشغل صوتي مدمج.</li>
+              <li><span class="icon">📷</span> إرفاق صور المشكلات الفنية وإيصالات السداد بدقة عالية.</li>
+              <li><span class="icon">⚡</span> مزامنة حية وفورية عبر خوادم Google Cloud Firestore.</li>
+            </ul>
+          </div>
+          <div class="feature-media">
+            <div class="phone-mockup">
+              <img src="images/screen_chat.png" alt="المحادثات والرسائل الصوتية المباشرة">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 4: Garage & QR Scanner -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>🚗 إدارة الجراج ومسح تصاريح الدخول الذكية (QR)</h2>
+            <p>
+              منظومة دخول متطورة لبوابات البرج والجراج الذكي تعتمد على مسح رمز الاستجابة السريع (QR Code) لتنظيم دخول سيارات السكان واستقبال الزوار بسلاسة وأمان.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> إصدار تصاريح دخول رقمية لزوار الشقق مع رمز QR فريد وتاريخ انتهاء محدد.</li>
+              <li><span class="icon">🔍</span> كاميرا ماسح ضوئي ذكية مخصصة لأفراد الأمن للتحقق الفوري من صلاحية التصريح.</li>
+              <li><span class="icon">✓</span> عرض بيانات الزائر، رقم الشقة المضيفة، ونوع التصريح بلحظات معدودة.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_scanner.png" alt="كاميرا مسح رمز الـ QR">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_scan_result.png" alt="نتيجة فحص التصريح وبيانات الزائر">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 5: Management Dashboard & Account Approvals -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>📊 لوحة تحكم الإدارة الشاملة واعتماد الحسابات</h2>
+            <p>
+              مركز قيادة وتحكم متكامل لإدارة برج الماسة، يتيح المتابعة الدقيقة لكافة مؤشرات الأداء، طلبات اعتماد الحسابات، وصلاحيات تنشيط وتعطيل المستخدمين.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> <strong>اعتماد ورفض الحسابات:</strong> مراجعة بيانات عقود السكان وتفعيل الحسابات بضغطة زر.</li>
+              <li><span class="icon">🔒</span> <strong>صلاحيات الإدارة:</strong> إمكانية تعطيل الحساب (Un-active) أو إعادة تنشيطه (Active) أو حذفه نهائياً.</li>
+              <li><span class="icon">🛡️</span> <strong>تبويب الحسابات المحذوفة ذاتياً:</strong> عند قيام أي ساكن بحذف حسابه، يتم تمييزه في تبويب خاص مع حفظ كامل سجلات المحادثات والشكاوى للإدارة.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_approvals.png" alt="طلبات اعتماد الحسابات">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_management.png" alt="لوحة الإدارة التشغيلية">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 6: Security Desk -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>👮 بوابة وأجهزة أمن وحراسة البرج</h2>
+            <p>
+              واجهة مخصصة لمكاتب الأمن والبوابات تتيح حصر حركة الدخول والخروج، مراقبة أجهزة الإنذار، وتلقي استغاثات الطوارئ للتحرك الفوري ومساندة السكان.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> شاشة خاصة بأفراد الحراسة تدعم العمل على أجهزة الآيباد والأجهزة اللوحية.</li>
+              <li><span class="icon">✓</span> سجل إلكتروني مباشر لكافة المركبات المتواجدة داخل الجراج.</li>
+              <li><span class="icon">✓</span> زر اتصال سريع بأرقام الطوارئ الرسمية (الشرطة، الإسعاف، الدفاع المدني).</li>
+            </ul>
+          </div>
+          <div class="feature-media">
+            <div class="phone-mockup">
+              <img src="images/screen_security.png" alt="لوحة الأمن وبوابات الدخول">
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ROLES SECTION -->
+      <section class="roles-section">
+        <span class="pill-tag">👥 الأدوار والجهات المستفيدة</span>
+        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">منظومة مصممة لتخدم جميع أطراف البرج</h2>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">تجربة استخدام مخصصة ومصممة لكل فئة لتسهيل التواصل والتشغيل اليومي بأعلى كفاءة.</p>
+
+        <div class="roles-grid">
+          <div class="role-card">
+            <div class="role-icon">💎</div>
+            <div class="role-title">السكّان والمُلاّك</div>
+            <div class="role-desc">طلب الصيانة، حجز المرافق، تصاريح الزوار، الشات مع الإدارة، وزر الطوارئ الفوري (SOS).</div>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">🛡️</div>
+            <div class="role-title">أمن وحراسة البوابات</div>
+            <div class="role-desc">مسح تصاريح الـ QR للزوار، مراقبة الجراج، واستقبال بلاغات الاستغاثة والطوارئ فورياً.</div>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">🏢</div>
+            <div class="role-title">إدارة وتشغيل البرج</div>
+            <div class="role-desc">اعتماد الحسابات، تحصيل الرسوم، إدارة جداول الصيانة، ونشر الإعلانات والتعميمات الرسمية.</div>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">⚙️</div>
+            <div class="role-title">المشرف العام (SaaS)</div>
+            <div class="role-desc">مراقبة الأداء العام للمنظومة، إدارة الصلاحيات السحابية، وضبط النسخ الاحتياطية والأمان.</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en" class="lang-content">
+
+      <!-- HERO -->
+      <section class="hero">
+        <span class="pill-tag">✨ Integrated Luxury Residential & Property Management</span>
+        <h1>Al-Masa Diamond Tower Portal</h1>
+        <p>
+          The comprehensive digital ecosystem for residents, property management, and security personnel. Featuring cloud sync, maintenance tracking, amenity bookings, QR garage passes, and live multimedia communication.
+        </p>
+
+        <div class="hero-banner-wrap">
+          <img src="images/hero_banner.png" alt="Al-Masa Tower App Banner" class="hero-banner-img">
+        </div>
+      </section>
+
+      <!-- FEATURES LIST -->
+      <div class="features-grid">
+
+        <!-- Feature 1: Login & Auth -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>🔑 Verified Registration & Multi-Role Access</h2>
+            <p>
+              A secure authentication portal that verifies resident identities, apartment units, and staff roles before granting access, ensuring maximum security and community privacy.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> Multi-role support: Residents, Owners, Security Staff, and Facility Management.</li>
+              <li><span class="icon">✓</span> Apartment unit, floor number, and residency type verification.</li>
+              <li><span class="icon">✓</span> Transparent approval tracking with in-app self-deletion and cancellation options.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_login.png" alt="Login Screen">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_register.png" alt="Registration Screen">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 2: Resident Portal -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>🏠 Resident Dashboard & Luxury Amenities</h2>
+            <p>
+              An elegant mobile interface offering one-tap access to all residential amenities, emergency dispatch, and community announcements.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">🚨</span> <strong>Instant SOS Distress Button:</strong> Dispatches immediate emergency alerts with exact unit numbers to security.</li>
+              <li><span class="icon">✓</span> Maintenance ticket dispatch with photo attachments and technician live tracking.</li>
+              <li><span class="icon">✓</span> Luxury amenity bookings: Gym, spa, rooftop lounge, and swimming pool.</li>
+              <li><span class="icon">✓</span> Access to building census and emergency evacuation guidelines.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_home.png" alt="Resident Home & SOS">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_drawer.png" alt="Comprehensive App Drawer">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 3: Multimedia Chat -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>💬 Real-Time Multimedia Community Chat</h2>
+            <p>
+              Dedicated real-time channels connecting residents with facility management and gate security, supporting text messages, photo attachments, and instant audio voice notes.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">🎙️</span> Record and send instant voice memos with an embedded audio player.</li>
+              <li><span class="icon">📷</span> Attach high-resolution maintenance photos and payment receipts.</li>
+              <li><span class="icon">⚡</span> Zero-latency real-time synchronization powered by Google Cloud Firestore.</li>
+            </ul>
+          </div>
+          <div class="feature-media">
+            <div class="phone-mockup">
+              <img src="images/screen_chat.png" alt="Live Chat with Audio & Photos">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 4: Smart QR Passes -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>🚗 Smart Garage & QR Visitor Entry Passes</h2>
+            <p>
+              Advanced gate access system utilizing encrypted QR codes to manage vehicle flow and verify residential guests seamlessly.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> Generate digital guest passes with unique QR codes and expiration timers.</li>
+              <li><span class="icon">🔍</span> High-speed security camera scanner for instant QR verification.</li>
+              <li><span class="icon">✓</span> Live inspection displaying guest identity, host unit, and vehicle permits.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_scanner.png" alt="QR Scanner Camera View">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_scan_result.png" alt="Verified Visitor Pass Result">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 5: Management Dashboard -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>📊 Management Dashboard & Account Governance</h2>
+            <p>
+              A robust administration command center allowing tower executives to audit accounts, manage access states, and oversee community operations.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> <strong>One-Tap Approvals:</strong> Verify tenancy contracts and approve new accounts instantly.</li>
+              <li><span class="icon">🔒</span> <strong>Account Governance:</strong> Deactivate (Un-active), reactivate (Active), or permanently purge users.</li>
+              <li><span class="icon">🛡️</span> <strong>Self-Deleted Accounts Audit:</strong> Accounts removed by users are clearly tagged in a dedicated tab while preserving all audit chats and records.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_approvals.png" alt="Account Approvals Tab">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_management.png" alt="Management Operations">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 6: Security Desk -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>👮 Gate Security & Operations Center</h2>
+            <p>
+              Custom-tailored interface for front desk security personnel and gatekeepers, optimized for iPads and tablets.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> Real-time monitoring of garage parking occupancy and visitor logs.</li>
+              <li><span class="icon">✓</span> Instant reception of emergency SOS distress calls with apartment locations.</li>
+              <li><span class="icon">✓</span> Direct speed-dial to national emergency services (Police, Ambulance, Fire Dept).</li>
+            </ul>
+          </div>
+          <div class="feature-media">
+            <div class="phone-mockup">
+              <img src="images/screen_security.png" alt="Security Operations Desk">
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ROLES SECTION -->
+      <section class="roles-section">
+        <span class="pill-tag">👥 Stakeholders & Access Levels</span>
+        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">Engineered for Every Community Member</h2>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Tailored user experiences designed to maximize operational efficiency and peace of mind.</p>
+
+        <div class="roles-grid">
+          <div class="role-card">
+            <div class="role-icon">💎</div>
+            <div class="role-title">Residents & Owners</div>
+            <div class="role-desc">Maintenance requests, facility bookings, guest passes, direct staff chat, and emergency SOS button.</div>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">🛡️</div>
+            <div class="role-title">Gate Security</div>
+            <div class="role-desc">QR code scanning, parking garage monitoring, and immediate emergency response.</div>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">🏢</div>
+            <div class="role-title">Property Management</div>
+            <div class="role-desc">Resident onboarding approvals, fee tracking, maintenance dispatching, and community circulars.</div>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">⚙️</div>
+            <div class="role-title">Super Admin (SaaS)</div>
+            <div class="role-desc">Multi-property performance tracking, cloud security management, and automated backups.</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 برج الماسة (Al-Masa Luxury Tower) • شركة المهندس للبرمجيات (Elmohands Software). All rights reserved.</p>
+    <p style="margin-top: 0.6rem;">
+      <a href="https://elmohands.official-web.online/towerManagement">🛡️ سياسة الخصوصية وحذف الحساب (Privacy Policy)</a> •
+      <a href="https://elmohands.official-web.online/" target="_blank" rel="noopener">elmohands.official-web.online</a>
+    </p>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const langBtn = document.getElementById('langBtn');
+    const langLabel = document.getElementById('langLabel');
+    const contentAr = document.getElementById('content-ar');
+    const contentEn = document.getElementById('content-en');
+    const navBrandTitle = document.getElementById('nav-brand-title');
+    const btnPrivacyLink = document.getElementById('btn-privacy-link');
+
+    let currentTheme = 'dark';
+    let currentLang = 'ar';
+
+    themeBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', currentTheme);
+      themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    });
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      if (currentLang === 'ar') {
+        document.documentElement.setAttribute('lang', 'ar');
+        document.documentElement.setAttribute('dir', 'rtl');
+        contentEn.classList.remove('active');
+        contentAr.classList.add('active');
+        langLabel.textContent = 'English';
+        navBrandTitle.textContent = 'برج الماسة';
+        btnPrivacyLink.innerHTML = '🛡️ سياسة الخصوصية';
+      } else {
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('dir', 'ltr');
+        contentAr.classList.remove('active');
+        contentEn.classList.add('active');
+        langLabel.textContent = 'العربية';
+        navBrandTitle.textContent = 'Al-Masa Tower';
+        btnPrivacyLink.innerHTML = '🛡️ Privacy Policy';
+      }
+    });
+  </script>
+</body>
+</html>

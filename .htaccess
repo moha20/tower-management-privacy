@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /towerManagement/
+
+# Ensure /features redirects cleanly to /features/
+RewriteRule ^features$ features/ [R=301,L]
