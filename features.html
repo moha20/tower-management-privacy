@@ -338,7 +338,7 @@
     .roles-section {
       margin-top: 4rem;
       text-align: center;
-      background: linear-gradient(180deg, rgba(16, 26, 51, 0.7), rgba(7, 13, 30, 0.95));
+      background: linear-gradient(180deg, rgba(16, 26, 51, 0.75), rgba(7, 13, 30, 0.98));
       border: 1px solid var(--border);
       padding: 3.5rem 2rem;
       border-radius: var(--radius-lg);
@@ -357,7 +357,7 @@
     }
 
     .role-card {
-      background: rgba(11, 19, 41, 0.75);
+      background: rgba(11, 19, 41, 0.85);
       border: 1px solid var(--border);
       padding: 2rem 1.8rem;
       border-radius: var(--radius-md);
@@ -800,6 +800,425 @@
           <div class="feature-media">
             <div class="phone-mockup">
               <img src="images/screen_security.png" alt="لوحة الأمن وبوابات الدخول">
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ROLES SECTION -->
+      <section class="roles-section" id="roles">
+        <span class="pill-tag">👥 الأدوار والجهات المستفيدة • Role-Based Access Control</span>
+        <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 0.6rem; font-weight: 800;">أنواع وصلاحيات المستخدمين في البرنامج</h2>
+        <p style="color: var(--text-muted); max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
+          صُممت المنظومة بهندسة تحكم في الصلاحيات قائمة على الأدوار (RBAC) لخدمة كافة أطراف المجمع السكني بدقة وأمان، مع تجربة مستخدم مخصصة لكل فئة:
+        </p>
+
+        <!-- 4 Detailed Role Cards -->
+        <div class="roles-grid">
+          
+          <!-- Role 1: Resident -->
+          <div class="role-card">
+            <div class="role-card-header">
+              <span class="role-icon">💎</span>
+              <span class="role-badge">UserRole.resident</span>
+            </div>
+            <div class="role-title">الساكن والمستأجر</div>
+            <div class="role-subtitle">Resident & Property Owner</div>
+            <div class="role-desc">المستفيد الأساسي من كافة خدمات البرج ومرافقه الفاخرة، سواء كان مالكاً للشقة أو مستأجراً معتمداً.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>فتح ومتابعة طلبات الصيانة بالصور والتفاصيل لحظة بلحظة.</span></li>
+              <li><span class="check-icon">✓</span> <span>حجز المرافق العامة (صالة الجيم، المسبح، قاعة المناسبات).</span></li>
+              <li><span class="check-icon">✓</span> <span>إصدار تصاريح دخول رقمية برمز QR لضيوفه وزواره.</span></li>
+              <li><span class="check-icon">✓</span> <span>زر استغاثة طوارئ (SOS) فوري يرسل إنذاراً لغرفة الأمن.</span></li>
+              <li><span class="check-icon">✓</span> <span>محادثة فورية مباشرة مع إدارة البرج وقسم الصيانة.</span></li>
+              <li><span class="check-icon">✓</span> <span>متابعة الفواتير وخيار حذف الحساب ذاتياً بضغطة زر.</span></li>
+            </ul>
+          </div>
+
+          <!-- Role 2: Security -->
+          <div class="role-card">
+            <div class="role-card-header">
+              <span class="role-icon">🛡️</span>
+              <span class="role-badge">UserRole.security</span>
+            </div>
+            <div class="role-title">أمن وحراسة البوابات والجراج</div>
+            <div class="role-subtitle">Security & Garage Gatekeeper</div>
+            <div class="role-desc">مسؤولو السلامة والأمن الميداني، حراس البوابات، ومشرفو مواقف السيارات والجراجات التحت أرضية.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>ماسح QR ضوئي فوري للتحقق من تصاريح دخول الزوار والشاحنات.</span></li>
+              <li><span class="check-icon">✓</span> <span>سجل رقمي لمراقبة تدفق دخول وخروج السيارات ومواقف السكان.</span></li>
+              <li><span class="check-icon">✓</span> <span>شاشة استلام فورية لبلاغات الطوارئ والاستغاثات (SOS Monitor).</span></li>
+              <li><span class="check-icon">✓</span> <span>قناة تواصل وإنتركم داخلي للتنسيق مع إدارة البرج والوحدات.</span></li>
+              <li><span class="check-icon">✓</span> <span>واجهة تشغيلية مصممة للعمل السريع في الورديات على مدار الساعة.</span></li>
+            </ul>
+          </div>
+
+          <!-- Role 3: Management -->
+          <div class="role-card">
+            <div class="role-card-header">
+              <span class="role-icon">🏢</span>
+              <span class="role-badge">UserRole.management</span>
+            </div>
+            <div class="role-title">إدارة وتشغيل البرج</div>
+            <div class="role-subtitle">Tower Facility Management</div>
+            <div class="role-desc">مدير العقار، مشرفو الصيانة، المحاسب المالي، وفرق العمل الإدارية المسؤولة عن تسيير البرج.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>لوحة تحكم تفاعلية لإحصائيات الإشغال ونسب الإنجاز والمصروفات.</span></li>
+              <li><span class="check-icon">✓</span> <span>مراجعة طلبات التسجيل واعتماد حسابات السكان الجدد وتجميدها.</span></li>
+              <li><span class="check-icon">✓</span> <span>إسناد بلاغات الصيانة للفرق الفنية والشركات مع التكلفة.</span></li>
+              <li><span class="check-icon">✓</span> <span>تنظيم جداول حجوزات المرافق وأوقات الصيانة الدورية.</span></li>
+              <li><span class="check-icon">✓</span> <span>نشر التعميمات والإشعارات الجماعية لجميع سكان البرج.</span></li>
+              <li><span class="check-icon">✓</span> <span>سجل التعداد والإحصاء السكاني لخطط الإخلاء والسلامة.</span></li>
+            </ul>
+          </div>
+
+          <!-- Role 4: Super Admin -->
+          <div class="role-card">
+            <div class="role-card-header">
+              <span class="role-icon">⚙️</span>
+              <span class="role-badge">UserRole.superAdmin</span>
+            </div>
+            <div class="role-title">الأدمن العام للنظام (SaaS)</div>
+            <div class="role-subtitle">Platform Super Administrator</div>
+            <div class="role-desc">فريق الدعم والتشغيل المركزي وإدارة المنظومة السحابية المتعددة للمجمعات والأبراج.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>إدارة وتدشين بيانات الأبراج والمجمعات الجديدة (Multi-Tower).</span></li>
+              <li><span class="check-icon">✓</span> <span>إدارة التراخيص السنوية، باقات الاشتراك، وصلاحيات الإدارات.</span></li>
+              <li><span class="check-icon">✓</span> <span>مراقبة مؤشرات الأداء التقني، سلامة قواعد البيانات، والنسخ الاحتياطي.</span></li>
+              <li><span class="check-icon">✓</span> <span>صلاحية وصول عليا لكافة سجلات التدقيق والأمان المؤسسي.</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Permissions Matrix Table -->
+        <div class="matrix-container">
+          <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.4rem; font-weight: 700;">📊 مصفوفة مقارنة الصلاحيات والوظائف</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">مقارنة دقيقة تبين مستوى الوصول لكل شاشة وميزة رئيسية داخل التطبيق:</p>
+
+          <div class="table-scroll">
+            <table class="roles-table">
+              <thead>
+                <tr>
+                  <th>الميزة / الشاشة</th>
+                  <th style="text-align: center;">الساكن (`resident`)</th>
+                  <th style="text-align: center;">الأمن والجراج (`security`)</th>
+                  <th style="text-align: center;">إدارة البرج (`management`)</th>
+                  <th style="text-align: center;">الأدمن العام (`superAdmin`)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>تسجيل الدخول وإدارة الملف الشخصي</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>لوحة تحكم وإحصائيات البرج العامة</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>فتح بلاغات صيانة جديدة ومتابعتها</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>إسناد بلاغات الصيانة وتحديد التكلفة والمواعيد</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>حجز المرافق (الجيم، المسبح، القاعة، الشواء)</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓ (إدارة الحجوزات)</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>إصدار تصاريح QR رقمية للزوار</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>مسح والتحقق من QR الزوار عند البوابة</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>سجل حركة البوابة ومواقف السيارات</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>إطلاق تنبيه واستغاثة الطوارئ SOS</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                </tr>
+                <tr>
+                  <td>استقبال ومتابعة استغاثات الطوارئ SOS المباشرة</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>المحادثات الفورية وقنوات التواصل</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>اعتماد الحسابات وقبول/رفض السكان الجدد</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>نشر التعميمات والإعلانات العامة</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>حذف الحساب ذاتياً (Apple/Google Compliance)</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>إدارة اشتراكات وأبراج المنظومة السحابية</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Account Statuses Lifecycle -->
+        <div class="statuses-container">
+          <h3 style="font-size: 1.3rem; color: var(--primary); margin-bottom: 0.4rem; font-weight: 700;">🔄 دورة حياة وحالات الحسابات (Account Statuses)</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">يخضع كل مستخدم لنموذج تدقيق أمني يضمن سلامة وهويات قاطني البرج:</p>
+
+          <div class="status-chips-grid">
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-approved"></span>
+                <span style="color: #10b981;">معتمد ونشط (approved)</span>
+              </div>
+              <div class="status-chip-desc">الحساب موثق ومفعل بالكامل، يتمتع بكافة صلاحيات دوره في التطبيق.</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-pending"></span>
+                <span style="color: #f59e0b;">قيد المراجعة (pending)</span>
+              </div>
+              <div class="status-chip-desc">تم التسجيل وينتظر مراجعة وتأكيد إدارة البرج للتأكد من هوية ورقم شقة الساكن.</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-rejected"></span>
+                <span style="color: #ef4444;">مرفوض (rejected)</span>
+              </div>
+              <div class="status-chip-desc">تم رفض الطلب لعدم مطابقة بيانات الوحدة أو وجود خطأ في التسجيل.</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-inactive"></span>
+                <span style="color: #94a3b8;">معطل مؤقتاً (inactive)</span>
+              </div>
+              <div class="status-chip-desc">تجميد إداري مؤقت للحساب لحين مراجعة إدارة البرج (متأخرات أو انتهاء عقد).</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-deleted"></span>
+                <span style="color: #ec4899;">محذوف ذاتياً (deletedBySelf)</span>
+              </div>
+              <div class="status-chip-desc">قام المستخدم بطلب حذف حسابه عبر التطبيق؛ تُعطل إمكانية دخوله مع حماية السجلات المالية السابقة.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en" class="lang-content">
+
+      <!-- HERO -->
+      <section class="hero">
+        <span class="pill-tag">✨ Integrated Luxury Residential & Property Management</span>
+        <h1>Al-Masa Diamond Tower Portal</h1>
+        <p>
+          The comprehensive digital ecosystem for residents, property management, and security personnel. Featuring cloud sync, maintenance tracking, amenity bookings, QR garage passes, and live multimedia communication.
+        </p>
+
+        <div class="hero-banner-wrap">
+          <img src="images/hero_banner.png" alt="Al-Masa Tower App Banner" class="hero-banner-img">
+        </div>
+      </section>
+
+      <!-- FEATURES LIST -->
+      <div class="features-grid">
+
+        <!-- Feature 1: Login & Auth -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>🔑 Verified Registration & Multi-Role Access</h2>
+            <p>
+              A secure authentication portal that verifies resident identities, apartment units, and staff roles before granting access, ensuring maximum security and community privacy.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> Multi-role support: Residents, Owners, Security Staff, and Facility Management.</li>
+              <li><span class="icon">✓</span> Apartment unit, floor number, and residency type verification.</li>
+              <li><span class="icon">✓</span> Transparent approval tracking with in-app self-deletion and cancellation options.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_login.png" alt="Login Screen">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_register.png" alt="Registration Screen">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 2: Resident Portal -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>🏠 Resident Dashboard & Luxury Amenities</h2>
+            <p>
+              An elegant mobile interface offering one-tap access to all residential amenities, emergency dispatch, and community announcements.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">🚨</span> <strong>Instant SOS Distress Button:</strong> Dispatches immediate emergency alerts with exact unit numbers to security.</li>
+              <li><span class="icon">✓</span> Maintenance ticket dispatch with photo attachments and technician live tracking.</li>
+              <li><span class="icon">✓</span> Luxury amenity bookings: Gym, spa, rooftop lounge, and swimming pool.</li>
+              <li><span class="icon">✓</span> Access to building census and emergency evacuation guidelines.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_home.png" alt="Resident Home & SOS">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_drawer.png" alt="Comprehensive App Drawer">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 3: Multimedia Chat -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>💬 Real-Time Multimedia Community Chat</h2>
+            <p>
+              Dedicated real-time channels connecting residents with facility management and gate security, supporting text messages, photo attachments, and instant audio voice notes.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">🎙️</span> Record and send instant voice memos with an embedded audio player.</li>
+              <li><span class="icon">📷</span> Attach high-resolution maintenance photos and payment receipts.</li>
+              <li><span class="icon">⚡</span> Zero-latency real-time synchronization powered by Google Cloud Firestore.</li>
+            </ul>
+          </div>
+          <div class="feature-media">
+            <div class="phone-mockup">
+              <img src="images/screen_chat.png" alt="Live Chat with Audio & Photos">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 4: Smart QR Passes -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>🚗 Smart Garage & QR Visitor Entry Passes</h2>
+            <p>
+              Advanced gate access system utilizing encrypted QR codes to manage vehicle flow and verify residential guests seamlessly.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> Generate digital guest passes with unique QR codes and expiration timers.</li>
+              <li><span class="icon">🔍</span> High-speed security camera scanner for instant QR verification.</li>
+              <li><span class="icon">✓</span> Live inspection displaying guest identity, host unit, and vehicle permits.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_scanner.png" alt="QR Scanner Camera View">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_scan_result.png" alt="Verified Visitor Pass Result">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 5: Management Dashboard -->
+        <article class="feature-item">
+          <div class="feature-info">
+            <h2>📊 Management Dashboard & Account Governance</h2>
+            <p>
+              A robust administration command center allowing tower executives to audit accounts, manage access states, and oversee community operations.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> <strong>One-Tap Approvals:</strong> Verify tenancy contracts and approve new accounts instantly.</li>
+              <li><span class="icon">🔒</span> <strong>Account Governance:</strong> Deactivate (Un-active), reactivate (Active), or permanently purge users.</li>
+              <li><span class="icon">🛡️</span> <strong>Self-Deleted Accounts Audit:</strong> Accounts removed by users are clearly tagged in a dedicated tab while preserving all audit chats and records.</li>
+            </ul>
+          </div>
+          <div class="feature-media dual-mockup">
+            <div class="phone-mockup">
+              <img src="images/screen_approvals.png" alt="Account Approvals Tab">
+            </div>
+            <div class="phone-mockup">
+              <img src="images/screen_management.png" alt="Management Operations">
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 6: Security Desk -->
+        <article class="feature-item reverse">
+          <div class="feature-info">
+            <h2>👮 Gate Security & Operations Center</h2>
+            <p>
+              Custom-tailored interface for front desk security personnel and gatekeepers, optimized for iPads and tablets.
+            </p>
+            <ul class="feature-points">
+              <li><span class="icon">✓</span> Real-time monitoring of garage parking occupancy and visitor logs.</li>
+              <li><span class="icon">✓</span> Instant reception of emergency SOS distress calls with apartment locations.</li>
+              <li><span class="icon">✓</span> Direct speed-dial to national emergency services (Police, Ambulance, Fire Dept).</li>
+            </ul>
+          </div>
+          <div class="feature-media">
+            <div class="phone-mockup">
+              <img src="images/screen_security.png" alt="Security Operations Desk">
             </div>
           </div>
         </article>
