@@ -334,20 +334,21 @@
     }
 
     /* ROLES HIGHLIGHT */
+    /* ROLES & USER TYPES ENHANCED */
     .roles-section {
       margin-top: 4rem;
       text-align: center;
-      background: linear-gradient(180deg, rgba(16, 26, 51, 0.6), rgba(7, 13, 30, 0.9));
+      background: linear-gradient(180deg, rgba(16, 26, 51, 0.7), rgba(7, 13, 30, 0.95));
       border: 1px solid var(--border);
-      padding: 3rem 2rem;
+      padding: 3.5rem 2rem;
       border-radius: var(--radius-lg);
     }
 
     .roles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.5rem;
       text-align: right;
     }
 
@@ -356,36 +357,218 @@
     }
 
     .role-card {
-      background: rgba(11, 19, 41, 0.7);
+      background: rgba(11, 19, 41, 0.75);
       border: 1px solid var(--border);
-      padding: 1.6rem;
+      padding: 2rem 1.8rem;
       border-radius: var(--radius-md);
       transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
     }
 
     .role-card:hover {
       border-color: var(--primary);
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
+    }
+
+    .role-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
     }
 
     .role-icon {
-      font-size: 2.2rem;
-      margin-bottom: 0.8rem;
+      font-size: 2.4rem;
       display: inline-block;
     }
 
+    .role-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      letter-spacing: 0.5px;
+      font-family: monospace, sans-serif;
+    }
+
     .role-title {
-      font-size: 1.2rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .role-subtitle {
+      font-size: 0.88rem;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
     }
 
     .role-desc {
       font-size: 0.92rem;
       color: var(--text-muted);
       line-height: 1.7;
+      margin-bottom: 1.2rem;
     }
+
+    .role-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1rem;
+      flex-grow: 1;
+    }
+
+    .role-features-list li {
+      font-size: 0.88rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      line-height: 1.5;
+    }
+
+    .role-features-list li .check-icon {
+      color: #10b981;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* COMPARISON TABLE */
+    .matrix-container {
+      margin-top: 3.5rem;
+      text-align: right;
+    }
+
+    html[dir="ltr"] .matrix-container {
+      text-align: left;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-top: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(11, 19, 41, 0.6);
+    }
+
+    .roles-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .roles-table th, .roles-table td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .roles-table th {
+      background: rgba(16, 26, 51, 0.95);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .roles-table tbody tr:hover {
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    .roles-table td:first-child {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .roles-table td.center {
+      text-align: center;
+    }
+
+    .badge-yes {
+      display: inline-block;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .badge-no {
+      display: inline-block;
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+
+    /* ACCOUNT STATUSES SECTION */
+    .statuses-container {
+      margin-top: 3.5rem;
+      background: rgba(11, 19, 41, 0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.8rem;
+      text-align: right;
+    }
+
+    html[dir="ltr"] .statuses-container {
+      text-align: left;
+    }
+
+    .status-chips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .status-chip-card {
+      background: rgba(16, 26, 51, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1.1rem;
+      transition: all 0.2s ease;
+    }
+
+    .status-chip-card:hover {
+      border-color: var(--primary);
+    }
+
+    .status-chip-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-approved { background-color: #10b981; box-shadow: 0 0 8px #10b981; }
+    .dot-pending { background-color: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+    .dot-rejected { background-color: #ef4444; box-shadow: 0 0 8px #ef4444; }
+    .dot-inactive { background-color: #94a3b8; box-shadow: 0 0 8px #94a3b8; }
+    .dot-deleted { background-color: #ec4899; box-shadow: 0 0 8px #ec4899; }
+
+    .status-chip-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
 
     /* FOOTER */
     footer {
@@ -624,219 +807,266 @@
       </div>
 
       <!-- ROLES SECTION -->
-      <section class="roles-section">
-        <span class="pill-tag">👥 الأدوار والجهات المستفيدة</span>
-        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">منظومة مصممة لتخدم جميع أطراف البرج</h2>
-        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">تجربة استخدام مخصصة ومصممة لكل فئة لتسهيل التواصل والتشغيل اليومي بأعلى كفاءة.</p>
-
-        <div class="roles-grid">
-          <div class="role-card">
-            <div class="role-icon">💎</div>
-            <div class="role-title">السكّان والمُلاّك</div>
-            <div class="role-desc">طلب الصيانة، حجز المرافق، تصاريح الزوار، الشات مع الإدارة، وزر الطوارئ الفوري (SOS).</div>
-          </div>
-          <div class="role-card">
-            <div class="role-icon">🛡️</div>
-            <div class="role-title">أمن وحراسة البوابات</div>
-            <div class="role-desc">مسح تصاريح الـ QR للزوار، مراقبة الجراج، واستقبال بلاغات الاستغاثة والطوارئ فورياً.</div>
-          </div>
-          <div class="role-card">
-            <div class="role-icon">🏢</div>
-            <div class="role-title">إدارة وتشغيل البرج</div>
-            <div class="role-desc">اعتماد الحسابات، تحصيل الرسوم، إدارة جداول الصيانة، ونشر الإعلانات والتعميمات الرسمية.</div>
-          </div>
-          <div class="role-card">
-            <div class="role-icon">⚙️</div>
-            <div class="role-title">المشرف العام (SaaS)</div>
-            <div class="role-desc">مراقبة الأداء العام للمنظومة، إدارة الصلاحيات السحابية، وضبط النسخ الاحتياطية والأمان.</div>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- ENGLISH CONTENT -->
-    <div id="content-en" class="lang-content">
-
-      <!-- HERO -->
-      <section class="hero">
-        <span class="pill-tag">✨ Integrated Luxury Residential & Property Management</span>
-        <h1>Al-Masa Diamond Tower Portal</h1>
-        <p>
-          The comprehensive digital ecosystem for residents, property management, and security personnel. Featuring cloud sync, maintenance tracking, amenity bookings, QR garage passes, and live multimedia communication.
+      <section class="roles-section" id="roles-en">
+        <span class="pill-tag">👥 Stakeholders & Access Levels • Role-Based Access Control</span>
+        <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 0.6rem; font-weight: 800;">User Types & Permissions in the App</h2>
+        <p style="color: var(--text-muted); max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
+          Engineered with an enterprise-grade Role-Based Access Control (RBAC) model to empower all stakeholders with specialized tools and maximum security:
         </p>
 
-        <div class="hero-banner-wrap">
-          <img src="images/hero_banner.png" alt="Al-Masa Tower App Banner" class="hero-banner-img">
-        </div>
-      </section>
-
-      <!-- FEATURES LIST -->
-      <div class="features-grid">
-
-        <!-- Feature 1: Login & Auth -->
-        <article class="feature-item">
-          <div class="feature-info">
-            <h2>🔑 Verified Registration & Multi-Role Access</h2>
-            <p>
-              A secure authentication portal that verifies resident identities, apartment units, and staff roles before granting access, ensuring maximum security and community privacy.
-            </p>
-            <ul class="feature-points">
-              <li><span class="icon">✓</span> Multi-role support: Residents, Owners, Security Staff, and Facility Management.</li>
-              <li><span class="icon">✓</span> Apartment unit, floor number, and residency type verification.</li>
-              <li><span class="icon">✓</span> Transparent approval tracking with in-app self-deletion and cancellation options.</li>
-            </ul>
-          </div>
-          <div class="feature-media dual-mockup">
-            <div class="phone-mockup">
-              <img src="images/screen_login.png" alt="Login Screen">
-            </div>
-            <div class="phone-mockup">
-              <img src="images/screen_register.png" alt="Registration Screen">
-            </div>
-          </div>
-        </article>
-
-        <!-- Feature 2: Resident Portal -->
-        <article class="feature-item reverse">
-          <div class="feature-info">
-            <h2>🏠 Resident Dashboard & Luxury Amenities</h2>
-            <p>
-              An elegant mobile interface offering one-tap access to all residential amenities, emergency dispatch, and community announcements.
-            </p>
-            <ul class="feature-points">
-              <li><span class="icon">🚨</span> <strong>Instant SOS Distress Button:</strong> Dispatches immediate emergency alerts with exact unit numbers to security.</li>
-              <li><span class="icon">✓</span> Maintenance ticket dispatch with photo attachments and technician live tracking.</li>
-              <li><span class="icon">✓</span> Luxury amenity bookings: Gym, spa, rooftop lounge, and swimming pool.</li>
-              <li><span class="icon">✓</span> Access to building census and emergency evacuation guidelines.</li>
-            </ul>
-          </div>
-          <div class="feature-media dual-mockup">
-            <div class="phone-mockup">
-              <img src="images/screen_home.png" alt="Resident Home & SOS">
-            </div>
-            <div class="phone-mockup">
-              <img src="images/screen_drawer.png" alt="Comprehensive App Drawer">
-            </div>
-          </div>
-        </article>
-
-        <!-- Feature 3: Multimedia Chat -->
-        <article class="feature-item">
-          <div class="feature-info">
-            <h2>💬 Real-Time Multimedia Community Chat</h2>
-            <p>
-              Dedicated real-time channels connecting residents with facility management and gate security, supporting text messages, photo attachments, and instant audio voice notes.
-            </p>
-            <ul class="feature-points">
-              <li><span class="icon">🎙️</span> Record and send instant voice memos with an embedded audio player.</li>
-              <li><span class="icon">📷</span> Attach high-resolution maintenance photos and payment receipts.</li>
-              <li><span class="icon">⚡</span> Zero-latency real-time synchronization powered by Google Cloud Firestore.</li>
-            </ul>
-          </div>
-          <div class="feature-media">
-            <div class="phone-mockup">
-              <img src="images/screen_chat.png" alt="Live Chat with Audio & Photos">
-            </div>
-          </div>
-        </article>
-
-        <!-- Feature 4: Smart QR Passes -->
-        <article class="feature-item reverse">
-          <div class="feature-info">
-            <h2>🚗 Smart Garage & QR Visitor Entry Passes</h2>
-            <p>
-              Advanced gate access system utilizing encrypted QR codes to manage vehicle flow and verify residential guests seamlessly.
-            </p>
-            <ul class="feature-points">
-              <li><span class="icon">✓</span> Generate digital guest passes with unique QR codes and expiration timers.</li>
-              <li><span class="icon">🔍</span> High-speed security camera scanner for instant QR verification.</li>
-              <li><span class="icon">✓</span> Live inspection displaying guest identity, host unit, and vehicle permits.</li>
-            </ul>
-          </div>
-          <div class="feature-media dual-mockup">
-            <div class="phone-mockup">
-              <img src="images/screen_scanner.png" alt="QR Scanner Camera View">
-            </div>
-            <div class="phone-mockup">
-              <img src="images/screen_scan_result.png" alt="Verified Visitor Pass Result">
-            </div>
-          </div>
-        </article>
-
-        <!-- Feature 5: Management Dashboard -->
-        <article class="feature-item">
-          <div class="feature-info">
-            <h2>📊 Management Dashboard & Account Governance</h2>
-            <p>
-              A robust administration command center allowing tower executives to audit accounts, manage access states, and oversee community operations.
-            </p>
-            <ul class="feature-points">
-              <li><span class="icon">✓</span> <strong>One-Tap Approvals:</strong> Verify tenancy contracts and approve new accounts instantly.</li>
-              <li><span class="icon">🔒</span> <strong>Account Governance:</strong> Deactivate (Un-active), reactivate (Active), or permanently purge users.</li>
-              <li><span class="icon">🛡️</span> <strong>Self-Deleted Accounts Audit:</strong> Accounts removed by users are clearly tagged in a dedicated tab while preserving all audit chats and records.</li>
-            </ul>
-          </div>
-          <div class="feature-media dual-mockup">
-            <div class="phone-mockup">
-              <img src="images/screen_approvals.png" alt="Account Approvals Tab">
-            </div>
-            <div class="phone-mockup">
-              <img src="images/screen_management.png" alt="Management Operations">
-            </div>
-          </div>
-        </article>
-
-        <!-- Feature 6: Security Desk -->
-        <article class="feature-item reverse">
-          <div class="feature-info">
-            <h2>👮 Gate Security & Operations Center</h2>
-            <p>
-              Custom-tailored interface for front desk security personnel and gatekeepers, optimized for iPads and tablets.
-            </p>
-            <ul class="feature-points">
-              <li><span class="icon">✓</span> Real-time monitoring of garage parking occupancy and visitor logs.</li>
-              <li><span class="icon">✓</span> Instant reception of emergency SOS distress calls with apartment locations.</li>
-              <li><span class="icon">✓</span> Direct speed-dial to national emergency services (Police, Ambulance, Fire Dept).</li>
-            </ul>
-          </div>
-          <div class="feature-media">
-            <div class="phone-mockup">
-              <img src="images/screen_security.png" alt="Security Operations Desk">
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- ROLES SECTION -->
-      <section class="roles-section">
-        <span class="pill-tag">👥 Stakeholders & Access Levels</span>
-        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">Engineered for Every Community Member</h2>
-        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Tailored user experiences designed to maximize operational efficiency and peace of mind.</p>
-
+        <!-- 4 Detailed Role Cards -->
         <div class="roles-grid">
+          
+          <!-- Role 1: Resident -->
           <div class="role-card">
-            <div class="role-icon">💎</div>
-            <div class="role-title">Residents & Owners</div>
-            <div class="role-desc">Maintenance requests, facility bookings, guest passes, direct staff chat, and emergency SOS button.</div>
+            <div class="role-card-header">
+              <span class="role-icon">💎</span>
+              <span class="role-badge">UserRole.resident</span>
+            </div>
+            <div class="role-title">Resident & Apartment Owner</div>
+            <div class="role-subtitle">Primary Community Beneficiary</div>
+            <div class="role-desc">Primary recipient of all tower luxury services, whether owning the apartment or registered as an authorized tenant.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>Submit and track maintenance requests with live photos and cost breakdowns.</span></li>
+              <li><span class="check-icon">✓</span> <span>Reserve shared amenities (Gym, Swimming Pool, Event Hall, BBQ area).</span></li>
+              <li><span class="check-icon">✓</span> <span>Generate digital QR access passes for guests and delivery drivers.</span></li>
+              <li><span class="check-icon">✓</span> <span>Instant one-tap emergency SOS broadcast to security control.</span></li>
+              <li><span class="check-icon">✓</span> <span>Direct in-app messaging with facility management and support staff.</span></li>
+              <li><span class="check-icon">✓</span> <span>Review invoices and self-service account deletion compliant with App Store rules.</span></li>
+            </ul>
           </div>
+
+          <!-- Role 2: Security -->
           <div class="role-card">
-            <div class="role-icon">🛡️</div>
-            <div class="role-title">Gate Security</div>
-            <div class="role-desc">QR code scanning, parking garage monitoring, and immediate emergency response.</div>
+            <div class="role-card-header">
+              <span class="role-icon">🛡️</span>
+              <span class="role-badge">UserRole.security</span>
+            </div>
+            <div class="role-title">Security & Garage Gatekeeper</div>
+            <div class="role-subtitle">On-Premises Safety Personnel</div>
+            <div class="role-desc">Frontline safety officers, gate guardians, and underground parking managers ensuring building protection 24/7.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>High-speed camera QR code scanner for visitor and contractor verification.</span></li>
+              <li><span class="check-icon">✓</span> <span>Digital gate and vehicle access log for tracking parking slot occupancy.</span></li>
+              <li><span class="check-icon">✓</span> <span>Dedicated real-time SOS Dispatch Monitor for rapid incident response.</span></li>
+              <li><span class="check-icon">✓</span> <span>Emergency intercom channels connecting directly to management and units.</span></li>
+              <li><span class="check-icon">✓</span> <span>Shift-optimized interface with dark-mode clarity for around-the-clock guards.</span></li>
+            </ul>
           </div>
+
+          <!-- Role 3: Management -->
           <div class="role-card">
-            <div class="role-icon">🏢</div>
-            <div class="role-title">Property Management</div>
-            <div class="role-desc">Resident onboarding approvals, fee tracking, maintenance dispatching, and community circulars.</div>
+            <div class="role-card-header">
+              <span class="role-icon">🏢</span>
+              <span class="role-badge">UserRole.management</span>
+            </div>
+            <div class="role-title">Tower Facility Management</div>
+            <div class="role-subtitle">Property Operations & Administration</div>
+            <div class="role-desc">Property directors, maintenance supervisors, accountants, and day-to-day operations personnel.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>Interactive operations dashboard with live occupancy, revenue, and ticket stats.</span></li>
+              <li><span class="check-icon">✓</span> <span>Onboarding review to verify, approve, reject, or suspend tenant accounts.</span></li>
+              <li><span class="check-icon">✓</span> <span>Maintenance ticket dispatching, contractor assignment, and cost accounting.</span></li>
+              <li><span class="check-icon">✓</span> <span>Facility calendar management and periodic maintenance scheduling.</span></li>
+              <li><span class="check-icon">✓</span> <span>Broadcast circulars and official announcements to all tower residents.</span></li>
+              <li><span class="check-icon">✓</span> <span>Building census and resident roster for emergency evacuation protocols.</span></li>
+            </ul>
           </div>
+
+          <!-- Role 4: Super Admin -->
           <div class="role-card">
-            <div class="role-icon">⚙️</div>
-            <div class="role-title">Super Admin (SaaS)</div>
-            <div class="role-desc">Multi-property performance tracking, cloud security management, and automated backups.</div>
+            <div class="role-card-header">
+              <span class="role-icon">⚙️</span>
+              <span class="role-badge">UserRole.superAdmin</span>
+            </div>
+            <div class="role-title">Platform Super Admin (SaaS)</div>
+            <div class="role-subtitle">Cloud System Infrastructure Admin</div>
+            <div class="role-desc">Central engineering and SaaS operations team overseeing multi-property environments and infrastructure.</div>
+            <ul class="role-features-list">
+              <li><span class="check-icon">✓</span> <span>Multi-tower provisioning and global property profile management.</span></li>
+              <li><span class="check-icon">✓</span> <span>Enterprise licensing, subscription tier management, and tenant onboarding.</span></li>
+              <li><span class="check-icon">✓</span> <span>Platform health monitoring, database integrity checks, and cloud backups.</span></li>
+              <li><span class="check-icon">✓</span> <span>Highest-level access for security compliance audits and legal integrity.</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Permissions Matrix Table -->
+        <div class="matrix-container">
+          <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.4rem; font-weight: 700;">📊 Feature & Permissions Comparison Matrix</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Clear comparison detailing access levels across all key application modules:</p>
+
+          <div class="table-scroll">
+            <table class="roles-table">
+              <thead>
+                <tr>
+                  <th>Feature / Screen</th>
+                  <th style="text-align: center;">Resident (`resident`)</th>
+                  <th style="text-align: center;">Security (`security`)</th>
+                  <th style="text-align: center;">Management (`management`)</th>
+                  <th style="text-align: center;">Super Admin (`superAdmin`)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sign-in & Profile Management</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Tower Analytics & Executive Dashboard</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Create & Track Maintenance Tickets</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Assign Tickets & Set Costs/Schedules</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Reserve Amenities (Gym, Pool, Hall, BBQ)</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓ (Manage)</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Issue Digital Guest QR Passes</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Gate QR Scanner & Visitor Verification</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Vehicle Log & Parking Slot Management</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Trigger Emergency SOS Broadcast</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                </tr>
+                <tr>
+                  <td>Live SOS Alert Reception & Dispatch Monitor</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Real-Time Chat & Multimedia Messaging</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Account Approvals & Resident Verification</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Publish Building Broadcasts & Circulars</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Self-Service Account Deletion (Store Compliance)</td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Multi-Tower Provisioning & Cloud SaaS Admin</td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-no">✕</span></td>
+                  <td class="center"><span class="badge-yes">✓</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
+
+        <!-- Account Statuses Lifecycle -->
+        <div class="statuses-container">
+          <h3 style="font-size: 1.3rem; color: var(--primary); margin-bottom: 0.4rem; font-weight: 700;">🔄 Account Lifecycle & Verification Statuses</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Every account is governed by a rigorous security verification workflow:</p>
+
+          <div class="status-chips-grid">
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-approved"></span>
+                <span style="color: #10b981;">Approved & Active (`approved`)</span>
+              </div>
+              <div class="status-chip-desc">Fully verified user with unrestricted access to authorized features based on their role.</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-pending"></span>
+                <span style="color: #f59e0b;">Pending Review (`pending`)</span>
+              </div>
+              <div class="status-chip-desc">Registration submitted, awaiting management verification of apartment ownership or tenancy.</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-rejected"></span>
+                <span style="color: #ef4444;">Rejected (`rejected`)</span>
+              </div>
+              <div class="status-chip-desc">Application denied due to mismatched apartment records or unauthorized access attempt.</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-inactive"></span>
+                <span style="color: #94a3b8;">Temporarily Inactive (`inactive`)</span>
+              </div>
+              <div class="status-chip-desc">Temporarily suspended by property management pending renewal or payment settlement.</div>
+            </div>
+
+            <div class="status-chip-card">
+              <div class="status-chip-header">
+                <span class="status-dot dot-deleted"></span>
+                <span style="color: #ec4899;">Deleted by User (`deletedBySelf`)</span>
+              </div>
+              <div class="status-chip-desc">User exercised in-app account deletion. Login disabled while audit logs remain secure.</div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </div>
